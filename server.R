@@ -3,7 +3,7 @@ library(readxl)
 
 server <- function(input, output) {
 
-  output$contents <- renderTable({
+  output$contents <- renderDT({
 
     # input$file1 will be NULL initially. After the user selects
     # and uploads a file, head of that data file by default,
@@ -37,7 +37,7 @@ server <- function(input, output) {
         stop(safeError(e))
       }
     )
-    return(head(df))
-  })
+    return(df)
+  }, editable = 'all')
 
 }

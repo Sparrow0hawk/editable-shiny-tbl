@@ -1,4 +1,5 @@
 library(shiny)
+library(DT)
 
 # Define UI for data upload app ----
 ui <- fluidPage(
@@ -45,7 +46,7 @@ ui <- fluidPage(
     mainPanel(
 
       # Output: Data file ----
-      tableOutput("contents")
+      DTOutput("contents")
 
     )
 
